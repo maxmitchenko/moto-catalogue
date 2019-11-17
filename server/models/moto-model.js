@@ -10,4 +10,4 @@ const Motorcycle = new Schema(
     { timestamps: true },
 )
 
-module.exports = mongoose.model('motorcycles', Motorcycle)
+module.exports = mongoose.model('motos', Motorcycle)

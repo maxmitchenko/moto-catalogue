@@ -10,6 +10,31 @@ const Wrapper = styled.div`
     padding: 0 40px 40px 40px;
 `
 
+const Delete = styled.div`
+    color: #ff0000;
+    cursor: pointer;
+    `
+
+    class DeleteMoto extends Component {
+        deleteUser = event => {
+            event.preventDefault()
+    
+            if (
+                window.confirm(
+                    `Do you want to delete the motorcycle ${this.props.id} permanently?`,
+                )
+            ) {
+                api.deleteMotoById(this.props.id)
+                window.location.reload()
+            }
+        }
+    
+        render() {
+            return <Delete onClick={this.deleteUser}>Delete</Delete>
+        }
+    }
+    
+
 class MotosList extends Component {
     constructor(props) {
         super(props)
@@ -53,8 +78,18 @@ class MotosList extends Component {
             },
             {
                 Header: 'Price',
-                accessor: 'price',
-                Cell: props => <span>{props.value.join(' / ')}</span>,
+                accessor: 'price'                
+            },
+            {
+                Header: '',
+                accessor: '',
+                Cell: function(props) {
+                    return (
+                        <span>
+                            <DeleteMoto id={props.original._id} />
+                        </span>
+                    )
+                },
             },
         ]
 
