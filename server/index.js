@@ -2,7 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const db = require('./db')
-const motoRouter = require('./routes/moto-router')
+const bookRouter = require('./routes/book-router')
 const app = express()
 const apiPort = 8000
 
@@ -16,6 +16,6 @@ app.get('/', (req, res) => {
     res.send('Hello World!')
 })
 
-app.use('/api', motoRouter)
+app.use('/api', bookRouter)
 
 app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`))

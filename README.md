@@ -1,2 +1,2 @@
-# moto-catalogue-MERN
+# book-catalogue-MERN
  my first MERN project

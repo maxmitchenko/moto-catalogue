@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import { MotosList, MotosInsert, MotosUpdate } from '../pages'
+import { BooksList, BooksInsert, BooksUpdate, WelcomePage } from '../pages'
 import { NavBar } from '../components'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -10,12 +10,13 @@ function App() {
         <Router>
             <NavBar />
             <Switch>
-                <Route path="/motos/list" exact component={MotosList} />
-                <Route path="/motos/create" exact component={MotosInsert} />
+                <Route path="/" exact component={WelcomePage} />
+                <Route path="/books/list" exact component={BooksList} />
+                <Route path="/books/create" exact component={BooksInsert} />
                 <Route
-                    path="/motos/update/:id"
+                    path="/books/update/:id"
                     exact
-                    component={MotosUpdate}
+                    component={BooksUpdate}
                 />
             </Switch>
         </Router>

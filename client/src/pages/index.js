@@ -1,5 +1,6 @@
-import MotosList from './MotosList'
-import MotosInsert from './MotosInsert'
-import MotosUpdate from './MotosUpdate'
+import BooksList from './BooksList'
+import BooksInsert from './BooksInsert'
+import BooksUpdate from './BooksUpdate'
+import WelcomePage from './WelcomePage'
 
-export { MotosList, MotosInsert, MotosUpdate }
+export { BooksList, BooksInsert, BooksUpdate, WelcomePage }
